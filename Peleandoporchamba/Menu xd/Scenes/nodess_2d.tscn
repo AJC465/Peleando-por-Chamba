@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://gbn6838ykfn6"]
+
+[ext_resource type="PackedScene" uid="uid://bok2v0j6710h7" path="res://Scenes/UI/configuraciones.tscn" id="1_vtrdg"]
+[ext_resource type="Texture2D" uid="uid://dxo41h8dk0c2y" path="res://icon.svg" id="1_xwxg1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Configuraciones" parent="CanvasLayer" instance=ExtResource("1_vtrdg")]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(518, 206)
+texture = ExtResource("1_xwxg1")

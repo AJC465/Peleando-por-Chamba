@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dccyscjp7jvet"]
+
+[ext_resource type="Script" path="res://Scripts/parallax_background.gd" id="1_iodkx"]
+[ext_resource type="Texture2D" uid="uid://ds0h8td04uy8o" path="res://Resources/BackGround/WhatsApp Image 2023-11-27 at 3.16.13 PM.jpeg" id="1_ksqu5"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_iodkx")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(7700, 1660)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture_filter = 2
+texture_repeat = 3
+position = Vector2(9600, 5400)
+scale = Vector2(2.49351, 6.50602)
+texture = ExtResource("1_ksqu5")
+region_enabled = true
+region_rect = Rect2(0, 0, 7700, 1660)

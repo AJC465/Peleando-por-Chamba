@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://boho4epk42dx3"]
+
+[ext_resource type="Script" path="res://Scripts/menu_v_2.gd" id="1_62fbr"]
+[ext_resource type="FontFile" uid="uid://baqiqr1v2ymuf" path="res://Resources/Fuente/VCR_OSD_MONO_1.001.ttf" id="1_bw8y0"]
+[ext_resource type="PackedScene" uid="uid://dccyscjp7jvet" path="res://Scenes/parallax_background.tscn" id="2_wx2ky"]
+[ext_resource type="AudioStream" uid="uid://ba0rg6v0pejj6" path="res://Resources/Music/y2mate.com - Megaman X  Intro Stage.mp3" id="4_54vbr"]
+
+[node name="MenuV2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_62fbr")
+
+[node name="VBoxBotones" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.5
+offset_top = -111.5
+offset_right = 105.5
+offset_bottom = 111.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Jugar" type="Button" parent="VBoxBotones"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 1, 1)
+theme_override_colors/font_hover_color = Color(0.0235294, 0.258824, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("1_bw8y0")
+theme_override_font_sizes/font_size = 60
+action_mode = 0
+text = "Jugar"
+flat = true
+
+[node name="Config" type="Button" parent="VBoxBotones"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0.462745, 1, 0.427451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("1_bw8y0")
+theme_override_font_sizes/font_size = 60
+text = "Confi"
+flat = true
+
+[node name="Salir" type="Button" parent="VBoxBotones"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0.27451, 0.211765, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("1_bw8y0")
+theme_override_font_sizes/font_size = 60
+text = "Salir"
+flat = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -358.0
+offset_top = 148.0
+offset_right = 375.0
+offset_bottom = 316.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 120
+text = "Chamba.png"
+
+[node name="ParallaxBackground2" parent="." instance=ExtResource("2_wx2ky")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_54vbr")
+autoplay = true
+
+[connection signal="pressed" from="VBoxBotones/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="VBoxBotones/Config" to="." method="_on_config_pressed"]
+[connection signal="pressed" from="VBoxBotones/Salir" to="." method="_on_salir_pressed"]
